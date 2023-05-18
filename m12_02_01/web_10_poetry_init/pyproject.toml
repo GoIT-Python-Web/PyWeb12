@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "web-10-poetry-init"
+version = "0.1.0"
+description = "Hw 2 Goit Python"
+authors = ["Yuriy Kuchma <krabatua@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "web_10_poetry_init"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.30.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

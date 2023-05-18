@@ -1,0 +1,22 @@
+2023-05-11 21:28:04.485158: [TICK] - payload: 0
+2023-05-11 21:28:04.485158: [TICK] - payload: 1
+2023-05-11 21:28:04.486160: [TICK] - payload: 2
+2023-05-11 21:28:56.593211: [TICK] - payload: 0
+2023-05-11 21:28:56.593211: [TICK] - payload: 1
+2023-05-11 21:28:56.593211: [TICK] - payload: 2
+2023-05-11 21:28:56.593211: [ERROR] - payload: Sometime it happens!
+2023-05-11 21:28:56.593211: [TICK] - payload: 0
+2023-05-11 21:28:56.593211: [TICK] - payload: 1
+2023-05-11 21:28:56.593211: [TICK] - payload: 2
+2023-05-11 21:29:30.207287: [TICK] - payload: 0
+2023-05-11 21:29:30.208291: [TICK] - payload: 1
+2023-05-11 21:29:30.208291: [TICK] - payload: 2
+2023-05-11 21:29:30.208291: [ERROR] - payload: Sometime it happens!
+2023-05-11 21:30:07.408542: [TICK] - payload: 0
+2023-05-11 21:30:07.408542: [TICK] - payload: 1
+2023-05-11 21:30:07.408542: [TICK] - payload: 2
+2023-05-11 21:30:07.408542: [ERROR] - payload: Sometime it happens!
+2023-05-11 21:35:06.572756: [TICK] - payload: 0
+2023-05-11 21:36:01.043406: [TICK] - payload: 1
+2023-05-11 21:36:40.023403: [TICK] - payload: 2
+2023-05-11 21:37:06.256634: [ERROR] - payload: Sometime it happens!
