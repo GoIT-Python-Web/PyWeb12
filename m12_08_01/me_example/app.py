@@ -2,7 +2,7 @@ import argparse
 
 from mongoengine import *
 
-connect(db="web12", host="mongodb+srv://userweb12:567234@krabaton.5mlpr.gcp.mongodb.net/?retryWrites=true&w=majority")
+connect(db="web12", host="mongodb+srv://userweb12:*****@krabaton.5mlpr.gcp.mongodb.net/?retryWrites=true&w=majority")
 
 parser = argparse.ArgumentParser(description='Cats APP')
 parser.add_argument('--action', help='Command: create, update, find, remove')
