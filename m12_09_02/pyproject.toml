@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "m12-09-02"
+version = "0.1.0"
+description = ""
+authors = ["Yuriy Kuchma <krabatua@gmail.com>"]
+readme = "README.md"
+packages = [{include = "m12_09_02"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scrapy = "^2.9.0"
+scrapyscript = "^1.1.5"
+selenium = "^4.10.0"
+playwright = "^1.35.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
