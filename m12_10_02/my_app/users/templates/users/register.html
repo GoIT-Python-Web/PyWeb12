@@ -1,0 +1,56 @@
+{% extends "photo_app/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Registration User</h2>
+    {% if form.errors and form.non_field_errors %}
+    <span class="alert alert-danger" role="alert">{{form.non_field_errors}}</span>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Username
+                {{ form.username }}
+            </label>
+            <span>{{form.errors.username}}</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">First name
+                {{ form.first_name }}
+            </label>
+            <span>{{form.errors.first_name}}</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last name
+                {{ form.last_name }}
+            </label>
+            <span>{{form.errors.last_name}}</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email
+                {{ form.email }}
+            </label>
+            <span>{{form.errors.email}}</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password
+                {{ form.password1 }}
+            </label>
+            <span>{{form.errors.password1}}</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Repeat Password
+                {{ form.password2 }}
+            </label>
+            <span>{{form.errors.password2}}</span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

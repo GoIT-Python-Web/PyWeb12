@@ -1,0 +1,24 @@
+{% extends 'photo_app/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-3">
+        {% for pic in pictures %}
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{{pic.path.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{pic.description}}</h5>
+                    <a href="{% url 'photo_app:edit' pic.id %}" class="btn btn-info">Change description</a>
+                    <a href="{% url 'photo_app:remove' pic.id %}" class="btn btn-danger">Delete image</a>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
