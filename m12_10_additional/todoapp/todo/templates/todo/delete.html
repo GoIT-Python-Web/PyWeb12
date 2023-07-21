@@ -1,0 +1,11 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<h2>Видалити Todo</h2>
+<form method="post">
+    {% csrf_token %}
+    <p>Ви впевненні? {{object}}</p>
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    <a href="{% url 'main' %}" class="btn btn-primary">Ні</a>
+</form>
+{% endblock %}

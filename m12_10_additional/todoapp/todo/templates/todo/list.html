@@ -1,0 +1,41 @@
+{% extends "todo/base.html" %}
+{% load humanize %}
+{% block content %}
+<h2>Todo List</h2>
+<div class="col-3">
+    <a href="{% url 'create-todo' %}" class="btn btn-primary">Створити нову таску</a>
+</div>
+<div>
+    {% for todo in todo_list %}
+    <div class="list-group">
+        <a href="{% url 'update-todo' todo.id %}"
+           class="list-group-item {% if todo.completed %} bg-success {% else %} bg-light {% endif %}"
+           aria-current="true">
+            <div>
+                <h6>{{ todo.title }}</h6>
+                <small>{{ todo.published|naturaltime }}</small>
+            </div>
+            <p>{{ todo.description|truncatechars:50 }}</p>
+        </a>
+    </div>
+    {% endfor %}
+    <nav class="sticky-bottom">
+        <ul class="pager">
+            <li class="previous">
+                <a {% if not page_obj.has_previous %} disabled {% endif %}
+                   href="{% if page_obj.has_previous %} {% url 'todolist' page_obj.previous_page_number %} {% else %} # {% endif %}">
+                    <span aria-hidden="true">←</span> Previous
+                </a>
+            </li>
+
+            <li class="next">
+                <a class="{% if not page_obj.has_next %} disabled {% endif %}"
+                   href="{% if page_obj.has_next %} {% url 'todolist' page_obj.next_page_number %} {% else %} # {% endif %}">
+                    Next <span aria-hidden="true">→</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+{% endblock %}
