@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "m12-11-01"
+version = "0.1.0"
+description = ""
+authors = ["Yuriy Kuchma <krabatua@gmail.com>"]
+readme = "README.md"
+packages = [{include = "m12_11_01"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["all"], version = "^0.100.0"}
+sqlalchemy = "^2.0.19"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
