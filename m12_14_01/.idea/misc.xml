@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="enabledOnReformat" value="true" />
+    <option name="executionMode" value="BINARY" />
+    <option name="pathToExecutable" value="C:\Users\Krabat\AppData\Local\Programs\Python\Python310\Scripts\black.exe" />
+    <option name="sdkUUID" value="4e93b37a-40cf-4c11-9fa5-7afd6acf62ad" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (m12_14_01)" project-jdk-type="Python SDK" />
+</project>
