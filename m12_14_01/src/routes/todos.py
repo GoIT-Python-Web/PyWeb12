@@ -1,6 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, HTTPException, Depends, status, Path, Query
+from fastapi_limiter.depends import RateLimiter
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.database.db import get_db
@@ -28,7 +29,7 @@ async def get_todos(limit: int = Query(10, ge=10, le=500), offset: int = Query(0
     return todos
 
 
-@router.get("/{todo_id}", response_model=TodoResponse)
+@router.get("/{todo_id}", response_model=TodoResponse, dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def get_todo(todo_id: int = Path(ge=1), db: AsyncSession = Depends(get_db),
                    user: User = Depends(auth_service.get_current_user)):
     todo = await repository_todos.get_todo(todo_id, db, user)

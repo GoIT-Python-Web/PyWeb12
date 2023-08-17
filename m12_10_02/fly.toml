@@ -1,0 +1,34 @@
+# fly.toml app configuration file generated for blue-butterfly-5578 on 2023-08-17T21:24:55+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "blue-butterfly-5578"
+primary_region = "ams"
+console_command = "/code/manage.py shell"
+
+[build]
+
+#[deploy]
+#  release_command = "python app/my_app/manage.py migrate"
+
+[env]
+  PORT = "8000"
+  SECRET_KEY="django-insecure-nt0c9)67l(h-dj60*vaanokp1zo6om#p1bqj$z7tork!)a9)o*"
+  NAME="rdlttrjz"
+  USER="rdlttrjz"
+  PASSWORD="mhH9mrwnRGJcsCV5D6BtSmZkTvEWxLpu"
+  HOST="trumpet.db.elephantsql.com"
+  PORT_DB=5432
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[statics]]
+  guest_path = "/code/static"
+  url_prefix = "/static/"

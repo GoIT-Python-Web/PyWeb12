@@ -42,7 +42,7 @@ class TodoResponse(BaseModel):
     completed: bool
     created_at: datetime | None
     updated_at: datetime | None
-    user: UserResponseSchema | None
+    # user: UserResponseSchema | None
 
     model_config = ConfigDict(from_attributes=True)
 

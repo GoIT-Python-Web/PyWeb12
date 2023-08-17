@@ -17,6 +17,7 @@ libgravatar = "^1.0.4"
 fastapi-mail = "^1.4.1"
 redis = "^4.6.0"
 cloudinary = "^1.33.0"
+fastapi-limiter = "^0.1.5"
 
 
 [tool.poetry.group.test.dependencies]

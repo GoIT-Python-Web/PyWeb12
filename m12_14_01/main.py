@@ -4,10 +4,12 @@ from ipaddress import ip_address
 from typing import Callable
 
 import uvicorn
+import redis.asyncio as redis
 from fastapi import FastAPI, BackgroundTasks, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
+from fastapi_limiter import FastAPILimiter
 
 from src.routes import todos, auth, users
 
@@ -54,6 +56,7 @@ app.include_router(auth.router)
 app.include_router(todos.router, prefix='/api')
 app.include_router(users.router, prefix='/api')
 
+
 async def task():
     await asyncio.sleep(3)
     print("Send email")
@@ -64,6 +67,12 @@ async def task():
 async def read_root(background_tasks: BackgroundTasks):
     background_tasks.add_task(task)
     return {"message": "TODO API"}
+
+
+@app.on_event("startup")
+async def startup():
+    r = await redis.Redis(host='localhost', port=6379, db=0, encoding="utf-8", decode_responses=True)
+    await FastAPILimiter.init(r)
 
 
 if __name__ == '__main__':
